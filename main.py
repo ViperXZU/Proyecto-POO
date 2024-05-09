@@ -1,9 +1,12 @@
+from model.usuario import User
+
 while True:
     print("Bienvenido al sistema de gestion de Empresa")
     print("Por favor, ingrese su usuario y contraseña")
-    usuario = input("Usuario: ")
+    nombre = input("Usuario: ")
     contrasena = input("Contraseña: ")
-    if usuario == "admin" and contrasena == "1234":
+    usuario = User(nombre, contrasena)
+    if nombre == usuario.nombre and contrasena == usuario.password:
         print("Bienvenido al sistema")
         break
     else:
