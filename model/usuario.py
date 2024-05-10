@@ -1,12 +1,12 @@
-class User:
-    nombre = ""
-    email = ""
-    password = ""
+from persona import Persona 
 
-    def __init__(self, nombre, password = None):
+class User(Persona):
+    def __init__(self, id, nombre, password, rol, apellido, correo, telefono):
+        super().__init__(id, password, rol)
         self.nombre = nombre
-        self.password = password
-
+        self.apellido = apellido
+        self.correo = correo
+        self.telefono = telefono
+        
     def __str__(self):
-        return "Nombre: " + self.nombre + " Password: " + self.password
-    
+        return f'User({self.id}, {self.nombre}, {self.password}, {self.rol}, {self.apellido}, {self.correo}, {self.telefono})'
